@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarbonOS AI | The Next Evolution of Compliance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-tint": "#00e1ab", "on-secondary-fixed-variant": "#00513c", tertiary: "#fefeff", "secondary-fixed": "#aaf1d3", "tertiary-fixed-dim": "#c3c7c9", "surface-container-high": "#232c28", background: "#0c1511", "primary-dim": "#00edb4", "on-secondary": "#003828", "outline-variant": "#3a4a43", "primary-fixed": "#36ffc4", "surface-container-highest": "#2d3732", "surface-variant": "#2d3732", "error-container": "#93000a", "on-primary-container": "#007255", "secondary-dim": "#3aedce", "on-error": "#690005", "error-dim": "#d7383b", "on-tertiary-container": "#606466", "surface-bright": "#323b37", "primary-container": "#00ffc2", "primary-fixed-dim": "#00e1ab", "surface-container-low": "#141d19", "inverse-surface": "#dbe5de", "on-tertiary": "#2d3133", secondary: "#8fd5b7", "on-background": "#dbe5de", outline: "#83958c", "on-error-container": "#ffdad6", error: "#ffb4ab", "surface-dim": "#0c1511", "on-primary-fixed": "#002116", "secondary-container": "#00543e", "on-secondary-fixed": "#002116", "on-tertiary-fixed-variant": "#434749", "on-surface-variant": "#b9cbc1", "on-primary-fixed-variant": "#00513c", "surface-container-lowest": "#07100c", "tertiary-fixed": "#e0e3e5", "tertiary-dim": "#00c7ec", surface: "#0c1511", "tertiary-container": "#dfe2e4", "on-secondary-container": "#81c6aa", "inverse-on-surface": "#29322e", "surface-container": "#18221d", "on-surface": "#dbe5de", "on-tertiary-fixed": "#181c1e", "secondary-fixed-dim": "#8fd5b7", "inverse-primary": "#006c50", "on-primary": "#003828", primary: "#fbfffa"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, fontFamily: {headline: ["Space Grotesk"], body: ["Inter"], label: ["Inter"], display: "Space Grotesk"}}}};</script>
+<style>
+        body {
+            background-color: #001112;
+            color: #d3f8f8;
+            font-family: 'Inter', sans-serif;
+        }
+        .headline-font { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(0, 43, 44, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .obsidian-glow {
+            box-shadow: 0 20px 40px -12px rgba(0, 255, 194, 0.08);
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #aaffdc 0%, #00fdc1 100%);
+        }
+        .tonal-shift {
+            background-color: #001717;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_40px_-12px_rgba(0,255,194,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-bold tracking-tighter text-cyan-400 font-['Space_Grotesk']">CarbonOS AI</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Features</a>
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Solutions</a>
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Pricing</a>
+<a class="text-slate-400 hover:text-cyan-200 transition-colors font-['Space_Grotesk'] tracking-tight" href="#">Docs</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-400 hover:text-cyan-200 transition-colors font-['Space_Grotesk'] tracking-tight">Login</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-xl font-bold font-['Space_Grotesk'] tracking-tight hover:scale-[1.02] transition-all duration-200 shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)]">Get Started</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 px-8 overflow-hidden">
+<div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(0,253,193,0.15),transparent_50%)]"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<div>
+<span class="inline-block px-4 py-1 mb-6 rounded-full bg-surface-container-high border border-outline-variant/20 text-primary-fixed text-xs font-bold tracking-[0.2em] uppercase">The Kinetic Monolith</span>
+<h1 class="text-6xl md:text-7xl headline-font font-bold tracking-tighter leading-[0.9] text-on-surface mb-6">
+                    The Next Evolution of <span class="text-primary-fixed">Compliance</span>
+</h1>
+<p class="text-lg text-on-surface-variant max-w-lg mb-10 leading-relaxed">
+                    Automate your EPR and carbon compliance with high-frequency parsing and AI-driven insights. Designed for the high-density requirements of modern manufacturing.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold headline-font text-lg hover:scale-[1.02] transition-all duration-200 shadow-[0_0_30px_-5px_rgba(0,255,194,0.4)]">Secure Your Enterprise</button>
+<button class="bg-surface-container-highest/50 backdrop-blur-xl border border-outline-variant/30 text-on-surface px-8 py-4 rounded-xl font-bold headline-font text-lg hover:bg-surface-bright transition-all duration-200">View Sandbox</button>
+</div>
+</div>
+<!-- Dashboard Preview -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/30 to-tertiary/30 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative glass-panel rounded-2xl p-4 border border-outline-variant/20 obsidian-glow overflow-hidden">
+<div class="flex items-center gap-2 mb-6 border-b border-outline-variant/10 pb-4">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<div class="ml-4 h-2 w-32 bg-surface-container rounded-full"></div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Carbon Index</div>
+<div class="text-2xl headline-font font-bold text-primary">124.82</div>
+<div class="w-full h-8 mt-2 bg-surface-container-highest/30 rounded flex items-end gap-1 px-1">
+<div class="w-2 bg-primary/40 h-2"></div>
+<div class="w-2 bg-primary/40 h-4"></div>
+<div class="w-2 bg-primary/40 h-3"></div>
+<div class="w-2 bg-primary h-6"></div>
+<div class="w-2 bg-primary/60 h-4"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest mb-1">Compliance Score</div>
+<div class="text-2xl headline-font font-bold text-secondary">99.4%</div>
+<div class="w-full h-1 mt-4 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[99%] h-full bg-secondary"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-xl mb-4">
+<div class="flex justify-between items-center mb-3">
+<div class="text-xs font-bold headline-font">AI Insight Engine</div>
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed">
+<span class="text-primary">Optimized:</span> Switching to Grade-B PET can reduce carbon footprint by 14.2% next quarter based on current supply chain ingestion.
+                        </p>
+</div>
+<div class="flex gap-2">
+<div class="flex-1 bg-surface-container-low p-3 rounded-xl border-l-2 border-primary">
+<div class="text-[9px] text-on-surface-variant">SPOT PRICE</div>
+<div class="text-sm font-bold text-on-surface">$0.42 / MT</div>
+</div>
+<div class="flex-1 bg-surface-container-low p-3 rounded-xl">
+<div class="text-[9px] text-on-surface-variant">ACTIVE AUDITS</div>
+<div class="text-sm font-bold text-on-surface">14 Regions</div>
+</div>
+</div>
+</div>
+<img class="hidden" data-alt="close up of a high tech computer screen showing futuristic data visualizations and financial charts with a dark teal and neon green color palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMAr6tleEnwjAwTEIfsEWrqd6OSUKXAK2OnRpyzdcJnPVDCciFbiiiIz5xQjKVq7Zglc8s-8MUJ0eC3tYZ4gxpeobiwtm5whjzXTpyKm99ZL_Mbe8wZR_A0pzIMWqiiKY2NLoYmsL3n_ss_7a0uGminbitEuBCjVeJv1u08DlhAjTdS2lFA9jxwJEF4AaNHEGaHJuZOnDkXvKfhPBcpCNk2Z-5LuYpWk1Kn3wzOf8lUjhnb7mKz6CWk12PzntVQmCefFR0SPLBVYQw"/>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-20 tonal-shift">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+<div>
+<h2 class="text-4xl headline-font font-bold text-on-surface mb-4">Built for Manufacturers &amp; Recyclers</h2>
+<p class="text-on-surface-variant max-w-md">Trusted by global industrial leaders to manage complex regulatory requirements and circular economy workflows across 14 territories.</p>
+</div>
+<div class="flex gap-12 justify-start lg:justify-end">
+<div class="text-center">
+<div class="text-3xl headline-font font-bold text-primary">$4.2B</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Credits Processed</div>
+</div>
+<div class="text-center">
+<div class="text-3xl headline-font font-bold text-secondary">99.9%</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Audit Accuracy</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap justify-between items-center gap-8 opacity-40 grayscale contrast-125">
+<span class="text-xl headline-font font-black tracking-tighter italic">TECH-CORP</span>
+<span class="text-xl headline-font font-black tracking-tighter italic">AERO-LYTICS</span>
+<span class="text-xl headline-font font-black tracking-tighter italic">IND-STRY</span>
+<span class="text-xl headline-font font-black tracking-tighter italic">GLOBAL-RE</span>
+<span class="text-xl headline-font font-black tracking-tighter italic">MONO-SYNTH</span>
+</div>
+</div>
+</section>
+<!-- Feature Grid -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-5xl headline-font font-bold text-on-surface mb-6">High-Density Precision</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Our modular infrastructure handles millions of data points across your entire supply chain with zero latency.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card 1 -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col justify-between group hover:bg-surface-bright transition-all duration-300">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="policy">policy</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-4">EPR Compliance in India</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Automated filing for PWM, E-Waste, and Battery rules according to latest CPCB mandates.</p>
+</div>
+<button class="flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest group-hover:gap-3 transition-all">
+                        Explore Framework <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2 (Highlight) -->
+<div class="md:col-span-2 glass-panel p-8 rounded-2xl flex flex-col justify-between border-t-2 border-primary/20 bg-surface-container/40">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+</div>
+<h3 class="text-2xl headline-font font-bold mb-4">AI Recommendations</h3>
+<p class="text-on-surface-variant leading-relaxed">Predictive modeling for material substitution and tax optimization across global supply chains.</p>
+</div>
+<div class="w-full md:w-64 bg-surface-container-high p-6 rounded-xl border border-outline-variant/10 shadow-lg">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Live Optimization</span>
+</div>
+<p class="text-sm font-medium italic mb-2">"Switching to Grade-B PET can reduce carbon footprint by 14.2% next quarter."</p>
+<div class="text-[10px] text-on-surface-variant">Recommended 2m ago</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-8 rounded-2xl flex flex-col justify-between group hover:bg-surface-bright transition-all duration-300">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-4">High-Frequency Ingestion</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Real-time CSV/JSON parsing for heterogeneous industrial data streams and logistics logs.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="px-2 py-1 bg-surface-container text-[10px] rounded font-bold">.JSON</div>
+<div class="px-2 py-1 bg-surface-container text-[10px] rounded font-bold">.CSV</div>
+<div class="px-2 py-1 bg-surface-container text-[10px] rounded font-bold">API</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-2 glass-panel p-8 rounded-2xl flex flex-col md:flex-row gap-8 bg-surface-container-low border border-primary/5">
+<div class="flex-1">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="currency_exchange">currency_exchange</span>
+</div>
+<h3 class="text-xl headline-font font-bold mb-2">Credit Marketplace</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Direct access to high-quality carbon and plastic credits with verified traceability chains.</p>
+</div>
+<div class="w-full md:w-48 bg-surface-container-highest p-6 rounded-xl flex flex-col justify-center items-center text-center">
+<div class="text-[10px] text-on-surface-variant uppercase tracking-[0.2em] mb-2">Spot Price</div>
+<div class="text-3xl font-bold headline-font text-on-surface">$0.42</div>
+<div class="text-[10px] text-primary font-bold mt-1">/ MT Credits</div>
+</div>
+</div>
+<!-- Spacer/Decorative -->
+<div class="hidden lg:block glass-panel p-8 rounded-2xl overflow-hidden relative group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition duration-700" data-alt="abstract close-up of dark obsidian crystal with sharp edges and internal green light glowing through cracks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPY7Qblgqp5Puo_r_92J8kX8b0REp9rxGg7HVwEa0GJF5ZzjRlpMgy42otwVykLbwK2yvl1HG7xtTAXGfyIZ3nNpvZYbWRNgTb3XcHs6hILfSz6__YykXcCLqd4S-kgCj6Th4nA8cNs-L66jg54DbXJ4wR-ULs5kImlSpphBvn6QFnZyT2cf-WyGgE5eFpLgMJVRvU0liIED4K1K8l9jrNz-bkrdRL0HcYYGYfY_7IWVHJXsn1ydG1bJ7TO_tNkcVm-eclNVtgOsVZ"/>
+<div class="relative z-10 h-full flex items-center justify-center">
+<span class="text-xs font-bold headline-font tracking-[0.5em] vertical-text transform -rotate-90">KINETIC</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-32 px-8 tonal-shift">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="text-5xl headline-font font-bold text-on-surface mb-6">Enterprise Grade Economics</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg">Transparent pricing built for operational scale.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+<!-- Core Plan -->
+<div class="bg-surface-container p-10 rounded-2xl flex flex-col border border-outline-variant/10">
+<div class="mb-10">
+<h3 class="text-2xl headline-font font-bold text-on-surface mb-2">Core</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl headline-font font-bold">$2,490</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+</div>
+<ul class="space-y-6 mb-12 flex-1">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            5M Events Included
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            EPR Filing Engine
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Standard AI Insights
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Email Support
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-outline-variant text-on-surface headline-font font-bold hover:bg-surface-bright transition-colors">Start Core Trial</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="bg-surface-container-highest p-10 rounded-2xl flex flex-col border-2 border-primary/20 relative shadow-[0_0_50px_-10px_rgba(0,255,194,0.1)]">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Recommended</div>
+<div class="mb-10">
+<h3 class="text-2xl headline-font font-bold text-on-surface mb-2">Enterprise</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl headline-font font-bold text-primary">Custom</span>
+</div>
+</div>
+<ul class="space-y-6 mb-12 flex-1">
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Unlimited Throughput
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Multi-Region Governance
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Dedicated Technical Account Manager
+                        </li>
+<li class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            On-Prem Deployment Option
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary headline-font font-bold shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)] hover:scale-[1.02] transition-transform">Contact Solutions</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8 relative overflow-hidden">
+<div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_80%_80%,rgba(0,253,193,0.1),transparent_50%)]"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="text-5xl md:text-6xl headline-font font-bold text-on-surface mb-8">Ready to Lead the Green Transition?</h2>
+<p class="text-xl text-on-surface-variant mb-12 leading-relaxed">
+                Join the elite enterprises using CarbonOS AI to turn compliance from a liability into a competitive data asset.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-xl font-bold headline-font text-lg hover:scale-[1.05] transition-all duration-300">Secure My Enterprise</button>
+<button class="bg-transparent border border-outline-variant text-on-surface px-10 py-5 rounded-xl font-bold headline-font text-lg hover:bg-surface-container transition-all">Request Documentation</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-16 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1">
+<div class="text-lg font-bold text-cyan-400 font-['Inter'] mb-6">CarbonOS AI</div>
+<p class="text-slate-500 font-['Inter'] text-sm leading-relaxed">The infrastructure layer for high-density compliance and industrial carbon logic.</p>
+</div>
+<div>
+<h4 class="text-cyan-400 font-bold font-['Inter'] text-sm mb-6">Platform</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Carbon API</a></li>
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Compliance Hub</a></li>
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Integrations</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-cyan-400 font-bold font-['Inter'] text-sm mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Audit Standards</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-cyan-400 font-bold font-['Inter'] text-sm mb-6">Connect</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Documentation</a></li>
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">Support</a></li>
+<li><a class="text-slate-500 hover:text-cyan-300 transition-colors font-['Inter'] text-sm" href="#">LinkedIn</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-slate-500 font-['Inter'] text-xs">© 2026 Black Mass Energies</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-slate-700 hover:text-primary transition-colors cursor-pointer">verified</span>
+<span class="material-symbols-outlined text-slate-700 hover:text-primary transition-colors cursor-pointer">shield</span>
+<span class="material-symbols-outlined text-slate-700 hover:text-primary transition-colors cursor-pointer">database</span>
+</div>
+</div>
+</footer>
+</body></html>
