@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/carbonos-pro-app/$1" }
+  ]
+}
