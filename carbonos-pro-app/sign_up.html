@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarbonOS | Enterprise Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+body { background-color: #001112; color: #d3f8f8; font-family: 'Inter', sans-serif; }
+.font-space { font-family: 'Space Grotesk', sans-serif; }
+</style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#000a0a] to-[#001717] px-6">
+    <div class="absolute top-8 left-8">
+        <a href="landing_page.html" class="flex items-center gap-2 text-[#8eb2b2] hover:text-[#00FFC2] font-space tracking-widest text-xs uppercase transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Return to Hub
+        </a>
+    </div>
+
+    <div class="bg-[#001717] p-12 rounded-2xl max-w-xl w-full shadow-[0_20px_60px_-12px_rgba(0,255,194,0.15)] border border-[#00FFC2]/20">
+        <h2 class="text-3xl font-bold text-[#00FFC2] tracking-tighter font-space mb-2 text-center">Create Organization</h2>
+        <p class="text-[10px] text-[#8eb2b2] uppercase tracking-widest leading-relaxed mb-10 text-center">Step 1 of 2: Registry Access</p>
+        
+        <div class="space-y-6">
+            <div>
+                <label class="block text-[10px] font-space tracking-[0.2em] uppercase text-[#00FFC2] mb-2">Company Legal Name</label>
+                <input type="text" class="w-full bg-[#001112] border border-[#2c4d4e] rounded-xl px-4 py-4 focus:outline-none focus:border-[#00FFC2] transition-colors text-sm" placeholder="e.g. EcoCorp International" />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-[10px] font-space tracking-[0.2em] uppercase text-[#00FFC2] mb-2">Primary Sector</label>
+                    <select class="w-full bg-[#001112] border border-[#2c4d4e] rounded-xl px-4 py-4 focus:outline-none focus:border-[#00FFC2] transition-colors text-sm text-white">
+                        <option>Manufacturing & Industrial</option>
+                        <option>Information Technology</option>
+                        <option>Logistics & Transport</option>
+                        <option>Energy Production</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-space tracking-[0.2em] uppercase text-[#00FFC2] mb-2">Admin Email</label>
+                    <input type="email" class="w-full bg-[#001112] border border-[#2c4d4e] rounded-xl px-4 py-4 focus:outline-none focus:border-[#00FFC2] transition-colors text-sm" placeholder="admin@domain.com" />
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-[10px] font-space tracking-[0.2em] uppercase text-[#00FFC2] mb-2">Secure Password</label>
+                <input type="password" class="w-full bg-[#001112] border border-[#2c4d4e] rounded-xl px-4 py-4 focus:outline-none focus:border-[#00FFC2] transition-colors text-sm font-mono tracking-widest" placeholder="••••••••" />
+            </div>
+
+            <button onclick="register()" class="w-full bg-gradient-to-br from-[#00fdc1] to-[#00d5fe] text-[#002f39] py-4 rounded-xl font-bold font-space text-lg shadow-[0_0_30px_-5px_rgba(0,255,194,0.4)] hover:scale-[1.02] hover:shadow-[0_0_40px_-5px_rgba(0,255,194,0.6)] transition-all mt-8 border border-[#00d5fe]/50">
+                Deploy Environment
+            </button>
+            <p class="text-center text-[11px] font-space uppercase tracking-widest text-[#8eb2b2] mt-6">Already tracked? <a href="index.html" class="text-[#00FFC2] hover:text-white transition">Log in securely.</a></p>
+        </div>
+    </div>
+    
+    <script>
+        function register() {
+            // Mock authentication loop to securely bridge them to the frontend
+            localStorage.setItem('CARBONOS_COMPANY', '11111111-1111-1111-1111-111111111111');
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

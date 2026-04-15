@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#006858",
+                    "error-dim": "#d7383b",
+                    "error": "#ff716c",
+                    "on-surface": "#d3f8f8",
+                    "surface-container-highest": "#002b2c",
+                    "surface": "#001112",
+                    "outline-variant": "#2c4d4e",
+                    "secondary-dim": "#3aedce",
+                    "tertiary-fixed-dim": "#00c7ec",
+                    "on-secondary-container": "#ddfff4",
+                    "on-primary-fixed": "#004734",
+                    "on-error": "#490006",
+                    "outline": "#5a7b7c",
+                    "inverse-surface": "#e3ffff",
+                    "on-primary-fixed-variant": "#00664c",
+                    "tertiary-dim": "#00c7ec",
+                    "on-tertiary-container": "#004553",
+                    "on-primary": "#00654b",
+                    "on-tertiary-fixed-variant": "#004e5f",
+                    "surface-variant": "#002b2c",
+                    "error-container": "#9f0519",
+                    "tertiary-fixed": "#00d5fe",
+                    "surface-container-high": "#002425",
+                    "surface-container-low": "#001717",
+                    "tertiary": "#74e0ff",
+                    "inverse-on-surface": "#395b5c",
+                    "on-error-container": "#ffa8a3",
+                    "primary-fixed-dim": "#00edb4",
+                    "inverse-primary": "#006c51",
+                    "primary": "#aaffdc",
+                    "secondary-fixed-dim": "#3aedce",
+                    "on-background": "#d3f8f8",
+                    "on-tertiary": "#004e5f",
+                    "secondary-container": "#006b5b",
+                    "on-tertiary-fixed": "#002f39",
+                    "secondary": "#4ffcdc",
+                    "on-secondary": "#005d4f",
+                    "background": "#001112",
+                    "surface-tint": "#aaffdc",
+                    "tertiary-container": "#00d5fe",
+                    "surface-dim": "#001112",
+                    "primary-container": "#00fdc1",
+                    "primary-fixed": "#00fdc1",
+                    "secondary-fixed": "#4ffcdc",
+                    "surface-bright": "#003233",
+                    "primary-dim": "#00edb4",
+                    "on-primary-container": "#005c44",
+                    "surface-container": "#001e1e",
+                    "on-surface-variant": "#8eb2b2",
+                    "on-secondary-fixed": "#00483d",
+                    "surface-container-lowest": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #aaffdc 0%, #00fdc1 100%);
+        }
+        .obsidian-glow {
+            box-shadow: 0 20px 40px -12px rgba(0, 255, 194, 0.08);
+        }
+        .glass-panel {
+            background: rgba(0, 43, 44, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        input:focus {
+            background-color: #003233 !important;
+            border-color: #aaffdc !important;
+            outline: none;
+            box-shadow: none;
+        }
+        .ghost-border {
+            outline: 1px solid rgba(44, 77, 78, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary min-h-screen flex flex-col">
+<!-- Top Navigation (Shell Visibiity: Simplified for Transactional Flow) -->
+<nav class="fixed top-0 w-full z-50 flex justify-center items-center h-20 px-8">
+<div class="w-full max-w-screen-2xl flex justify-between items-center">
+<span class="text-2xl font-bold text-[#d3f8f8] tracking-tighter font-headline">CarbonOS</span>
+<div class="hidden md:flex items-center gap-4">
+<span class="text-on-surface-variant text-sm font-label">Already have an account?</span>
+<button class="text-primary font-medium hover:text-primary-container transition-colors font-label">Login</button>
+</div>
+</div>
+</nav>
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-6">
+<div class="w-full max-w-5xl flex flex-col md:flex-row glass-panel rounded-full obsidian-glow overflow-hidden min-h-[700px]">
+<!-- Side Illustration (The Kinetic Monolith Theme) -->
+<div class="hidden md:flex flex-col w-2/5 bg-surface-container-low relative p-12 overflow-hidden items-center justify-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-container rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary-container rounded-full blur-[100px]"></div>
+</div>
+<div class="relative z-10 text-center">
+<div class="w-48 h-48 mx-auto mb-12 flex items-center justify-center bg-surface-container-highest rounded-full shadow-[0_0_50px_rgba(0,255,194,0.15)] group">
+<img alt="CarbonOS Monolith" class="w-32 h-32 opacity-90 transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist glowing 3D carbon atom with neon mint electron paths orbiting a central obsidian core, dark high-tech background" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+</div>
+<h2 class="font-headline text-3xl font-bold tracking-tight text-on-surface mb-4">Precision Intelligence.</h2>
+<p class="text-on-surface-variant text-base leading-relaxed">Experience the heavy, industrial-grade power of the Kinetic Monolith in your supply chain.</p>
+</div>
+<!-- High-trust Elements -->
+<div class="absolute bottom-12 left-0 right-0 px-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span>AES-256 Encrypted</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-on-surface-variant/80">
+<span class="material-symbols-outlined text-primary text-[18px]">gpp_good</span>
+<span>GDPR Compliant</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sign-up Flow Container -->
+<div class="flex-1 p-8 md:p-16 flex flex-col justify-between">
+<div>
+<!-- Progress Indicator -->
+<div class="flex items-center gap-4 mb-12">
+<div class="flex items-center gap-2 group">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xs ring-4 ring-primary-container/10">1</div>
+<span class="text-sm font-semibold text-primary font-label">Account</span>
+</div>
+<div class="h-[1px] w-8 bg-outline-variant/30"></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-medium text-xs">2</div>
+<span class="text-sm font-medium text-on-surface-variant font-label">Company</span>
+</div>
+<div class="h-[1px] w-8 bg-outline-variant/30"></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant font-medium text-xs">3</div>
+<span class="text-sm font-medium text-on-surface-variant font-label">Success</span>
+</div>
+</div>
+<header class="mb-10">
+<h1 class="text-4xl font-headline font-bold text-on-surface tracking-tighter mb-2">Create Your Workspace</h1>
+<p class="text-on-surface-variant text-lg">Define your role in the carbon ecosystem.</p>
+</header>
+<!-- Workspace Type Selector -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+<button class="group p-6 rounded-xl bg-surface-container-high ghost-border hover:bg-surface-bright transition-all duration-150 text-left border-2 border-transparent focus:border-primary">
+<span class="material-symbols-outlined text-primary mb-3 block text-3xl">precision_manufacturing</span>
+<span class="block font-headline font-bold text-lg text-on-surface">Manufacturer</span>
+<span class="text-sm text-on-surface-variant font-label">Track production &amp; emissions.</span>
+</button>
+<button class="group p-6 rounded-xl bg-surface-container-low ghost-border hover:bg-surface-bright transition-all duration-150 text-left border-2 border-transparent focus:border-primary">
+<span class="material-symbols-outlined text-secondary mb-3 block text-3xl">recycling</span>
+<span class="block font-headline font-bold text-lg text-on-surface">Recycler</span>
+<span class="text-sm text-on-surface-variant font-label">Manage recovery &amp; logistics.</span>
+</button>
+</div>
+<!-- Main Form Fields -->
+<form class="space-y-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-semibold">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 text-on-surface placeholder:text-outline/50 transition-all font-body" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-semibold">Company Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 text-on-surface placeholder:text-outline/50 transition-all font-body" placeholder="Acme Logistics" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-semibold">Work Email</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 pl-12 text-on-surface placeholder:text-outline/50 transition-all font-body" placeholder="name@company.com" type="email"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">alternate_email</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-semibold">Password</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-lg p-4 pl-12 text-on-surface placeholder:text-outline/50 transition-all font-body" placeholder="Min. 12 characters" type="password"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">lock</span>
+</div>
+</div>
+<button class="w-full py-4 kinetic-gradient rounded-lg text-on-primary font-bold font-headline text-lg tracking-tight hover:scale-[1.01] active:scale-[0.98] transition-all shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)] mt-4" type="submit">
+                            Initialize Account
+                        </button>
+</form>
+<!-- Divider -->
+<div class="flex items-center gap-4 my-8">
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant font-semibold">Or continue with</span>
+<div class="h-[1px] flex-grow bg-outline-variant/20"></div>
+</div>
+<!-- Social Auth -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 rounded-lg bg-surface-container-highest ghost-border hover:bg-surface-bright transition-colors font-label font-medium text-sm">
+<img alt="Google" class="w-5 h-5" data-alt="Simplified Google brand icon with primary colors" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+                            Sign up with Google
+                        </button>
+<button class="flex items-center justify-center gap-3 py-3 rounded-lg bg-surface-container-highest ghost-border hover:bg-surface-bright transition-colors font-label font-medium text-sm">
+<img alt="Microsoft" class="w-5 h-5" data-alt="Simplified Microsoft brand icon with typical four-pane window colors" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+                            Sign up with Microsoft
+                        </button>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-xs text-on-surface-variant/60 font-body leading-relaxed">
+                        By initializing an account, you agree to the <a class="text-on-surface underline decoration-primary/30 hover:decoration-primary transition-all" href="#">Service Protocols</a> and <a class="text-on-surface underline decoration-primary/30 hover:decoration-primary transition-all" href="#">Data Residency Policies</a>.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-auto bg-[#001717]">
+<div class="w-full max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="text-center md:text-left">
+<span class="font-['Space_Grotesk'] font-black text-[#d3f8f8] text-xl mb-2 block">CarbonOS</span>
+<p class="font-['Inter'] text-sm text-[#8eb2b2]">© 2024 CarbonOS. All rights reserved. Built for the Kinetic Monolith.</p>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-6">
+<a class="text-sm text-[#8eb2b2] hover:text-[#00FFC2] transition-colors font-label" href="#">Privacy Policy</a>
+<a class="text-sm text-[#8eb2b2] hover:text-[#00FFC2] transition-colors font-label" href="#">Terms of Service</a>
+<a class="text-sm text-[#8eb2b2] hover:text-[#00FFC2] transition-colors font-label" href="#">Security</a>
+<a class="text-sm text-[#8eb2b2] hover:text-[#00FFC2] transition-colors font-label" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script src="app_logic.js"></script></body></html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarbonOS Dashboard | Enterprise Compliance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#003233",
+                    "on-primary-container": "#005c44",
+                    "on-tertiary-fixed-variant": "#004e5f",
+                    "tertiary": "#74e0ff",
+                    "on-primary-fixed": "#004734",
+                    "surface-variant": "#002b2c",
+                    "primary-dim": "#00edb4",
+                    "surface-tint": "#aaffdc",
+                    "inverse-on-surface": "#395b5c",
+                    "secondary-fixed-dim": "#3aedce",
+                    "error-container": "#9f0519",
+                    "on-surface": "#d3f8f8",
+                    "on-tertiary-fixed": "#002f39",
+                    "secondary-container": "#006b5b",
+                    "primary-container": "#00fdc1",
+                    "outline-variant": "#2c4d4e",
+                    "secondary": "#4ffcdc",
+                    "surface-container-low": "#001717",
+                    "surface": "#001112",
+                    "primary-fixed-dim": "#00edb4",
+                    "tertiary-container": "#00d5fe",
+                    "secondary-dim": "#3aedce",
+                    "surface-dim": "#001112",
+                    "on-tertiary": "#004e5f",
+                    "background": "#001112",
+                    "on-background": "#d3f8f8",
+                    "on-secondary-fixed": "#00483d",
+                    "on-error": "#490006",
+                    "on-primary-fixed-variant": "#00664c",
+                    "surface-container": "#001e1e",
+                    "primary-fixed": "#00fdc1",
+                    "on-secondary": "#005d4f",
+                    "surface-container-high": "#002425",
+                    "secondary-fixed": "#4ffcdc",
+                    "on-surface-variant": "#8eb2b2",
+                    "error": "#ff716c",
+                    "surface-container-highest": "#002b2c",
+                    "error-dim": "#d7383b",
+                    "tertiary-dim": "#00c7ec",
+                    "on-tertiary-container": "#004553",
+                    "on-secondary-fixed-variant": "#006858",
+                    "on-primary": "#00654b",
+                    "primary": "#aaffdc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #001112;
+            color: #d3f8f8;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for data-heavy views */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #001112; }
+        ::-webkit-scrollbar-thumb { background: #2c4d4e; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00FFC2; }
+    </style>
+</head>
+<body class="bg-surface overflow-x-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#001717] dark:bg-[#001717] flex flex-col h-full py-8 shadow-[0_20px_40px_-12px_rgba(0,255,194,0.08)] z-50">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold text-[#00FFC2] tracking-tighter font-['Space_Grotesk']">CarbonOS</h1>
+<p class="text-[10px] text-[#8eb2b2] uppercase tracking-widest leading-none">Enterprise Compliance</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-6 py-3 transition-all duration-150 ease-out magnetic-hover scale-[1.02] text-[#00FFC2] border-l-2 border-[#00FFC2] bg-gradient-to-r from-[#00FFC2]/10 to-transparent font-['Space_Grotesk'] tracking-tight" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center px-6 py-3 transition-all duration-150 ease-out hover:bg-[#002b2c] text-[#8eb2b2] hover:text-[#d3f8f8] font-['Space_Grotesk'] tracking-tight" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="cloud_upload">cloud_upload</span>
+<span>Upload</span>
+</a>
+<a class="flex items-center px-6 py-3 transition-all duration-150 ease-out hover:bg-[#002b2c] text-[#8eb2b2] hover:text-[#d3f8f8] font-['Space_Grotesk'] tracking-tight" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="storefront">storefront</span>
+<span>Marketplace</span>
+</a>
+<a class="flex items-center px-6 py-3 transition-all duration-150 ease-out hover:bg-[#002b2c] text-[#8eb2b2] hover:text-[#d3f8f8] font-['Space_Grotesk'] tracking-tight" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="psychology">psychology</span>
+<span>AI Insights</span>
+</a>
+<a class="flex items-center px-6 py-3 transition-all duration-150 ease-out hover:bg-[#002b2c] text-[#8eb2b2] hover:text-[#d3f8f8] font-['Space_Grotesk'] tracking-tight" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="assessment">assessment</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-3 rounded-xl font-bold font-space shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)] hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                New Audit
+            </button>
+</div>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 flex items-center justify-between px-8 bg-[#001112]/80 backdrop-blur-xl no-border bg-gradient-to-b from-[#001717] to-transparent">
+<div class="flex items-center gap-4 bg-surface-container-high px-4 py-2 rounded-full w-96 border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-['Space_Grotesk'] uppercase tracking-widest text-on-surface w-full" placeholder="SEARCH COMPLIANCE DATA..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden lg:block">
+<p class="text-[10px] font-['Space_Grotesk'] uppercase tracking-widest text-[#00FFC2]">Company Profile</p>
+<p class="text-xs font-medium">EcoCorp International</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container/30 p-0.5 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover rounded-full" data-alt="professional portrait of a corporate sustainability officer in a minimalist modern office setting with cool lighting" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen">
+<!-- Header Section -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<p class="text-primary font-space tracking-widest text-sm uppercase mb-1">Fiscal Year 2024 • Q3 Performance</p>
+<h2 class="text-4xl font-bold font-space tracking-tight text-on-surface">Compliance Dashboard</h2>
+</div>
+<div class="flex items-center gap-3">
+<div class="px-4 py-2 bg-surface-container-highest rounded-xl flex items-center gap-2 border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+<span class="text-sm font-medium">Jan 01 - Sep 14, 2024</span>
+</div>
+<button class="px-4 py-2 bg-surface-container-low text-on-surface-variant hover:text-primary transition-colors rounded-xl font-space text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export PDF
+                </button>
+</div>
+</div>
+<!-- Bento Grid: Main KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-8">
+<!-- Production Card -->
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:bg-surface-container">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<p class="text-[10px] font-space uppercase tracking-widest text-on-surface-variant mb-4 flex items-center justify-between">
+                    Production
+                    <span class="material-symbols-outlined text-primary/50">factory</span>
+</p>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-space">842.5</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-tighter">tons</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-[10px] px-2 py-0.5 bg-primary/10 text-primary rounded-full">+4.2%</span>
+<span class="text-[10px] text-on-surface-variant">vs last month</span>
+</div>
+</div>
+<!-- Emissions Card -->
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:bg-surface-container">
+<p class="text-[10px] font-space uppercase tracking-widest text-on-surface-variant mb-4 flex items-center justify-between">
+                    Emissions
+                    <span class="material-symbols-outlined text-error/50">co2</span>
+</p>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-space">12,490</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-tighter">kg CO2</span>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="text-[10px] px-2 py-0.5 bg-error/10 text-error rounded-full">-2.1%</span>
+<span class="text-[10px] text-on-surface-variant">efficiency gain</span>
+</div>
+</div>
+<!-- Obligation Card -->
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:bg-surface-container">
+<p class="text-[10px] font-space uppercase tracking-widest text-on-surface-variant mb-4 flex items-center justify-between">
+                    Obligation
+                    <span class="material-symbols-outlined text-tertiary/50">verified</span>
+</p>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-space">15,000</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-tighter">Credits</span>
+</div>
+<div class="mt-4 h-1 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-3/4"></div>
+</div>
+</div>
+<!-- Fulfilled Card -->
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:bg-surface-container">
+<p class="text-[10px] font-space uppercase tracking-widest text-on-surface-variant mb-4 flex items-center justify-between">
+                    Fulfilled
+                    <span class="material-symbols-outlined text-primary/50">check_circle</span>
+</p>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-space">11,250</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-tighter">Credits</span>
+</div>
+<p class="mt-4 text-[10px] text-primary">75% OF TARGET REACHED</p>
+</div>
+<!-- Deficit Card -->
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl relative overflow-hidden group transition-all duration-300 hover:bg-surface-container">
+<p class="text-[10px] font-space uppercase tracking-widest text-on-surface-variant mb-4 flex items-center justify-between">
+                    Deficit
+                    <span class="material-symbols-outlined text-error/50">trending_down</span>
+</p>
+<div class="flex items-baseline gap-1">
+<span class="text-3xl font-bold font-space">3,750</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-tighter">Credits</span>
+</div>
+<p class="mt-4 text-[10px] text-error uppercase tracking-widest">Action Required</p>
+</div>
+<!-- Status Card -->
+<div class="col-span-1 bg-surface-container-highest p-6 rounded-xl relative overflow-hidden group transition-all duration-300 border border-primary/20">
+<p class="text-[10px] font-space uppercase tracking-widest text-primary mb-4 flex items-center justify-between">
+                    Status
+                    <span class="material-symbols-outlined animate-pulse">radar</span>
+</p>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_#00FFC2]"></div>
+<span class="text-2xl font-bold font-space tracking-tight">ACTIVE</span>
+</div>
+<p class="mt-4 text-[10px] text-on-surface-variant">NEXT AUDIT: OCT 12</p>
+</div>
+</div>
+<!-- Charts and Detailed Analytics -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Carbon Emissions Trend (Line Chart Simulation) -->
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl overflow-hidden">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h3 class="text-xl font-bold font-space tracking-tight">Carbon Emissions Trend</h3>
+<p class="text-xs text-on-surface-variant">Aggregated metric tons per reporting interval</p>
+</div>
+<div class="flex gap-2">
+<button class="text-[10px] px-3 py-1 bg-surface-variant rounded text-on-surface">WEEKLY</button>
+<button class="text-[10px] px-3 py-1 text-on-surface-variant hover:bg-surface-variant rounded transition-colors">MONTHLY</button>
+</div>
+</div>
+<div class="h-64 relative">
+<!-- Chart Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="w-full h-[1px] bg-outline-variant/10"></div>
+<div class="w-full h-[1px] bg-outline-variant/10"></div>
+<div class="w-full h-[1px] bg-outline-variant/10"></div>
+<div class="w-full h-[1px] bg-outline-variant/10"></div>
+<div class="w-full h-[1px] bg-outline-variant/20"></div>
+</div>
+<!-- SVG Chart -->
+<svg class="absolute inset-0 w-full h-full" viewbox="0 0 800 200">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#00FFC2" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#00FFC2" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area -->
+<path d="M0,180 L50,160 L120,170 L200,120 L280,140 L360,90 L440,110 L520,60 L600,80 L680,40 L800,50 L800,200 L0,200 Z" fill="url(#chartGradient)"></path>
+<!-- Line -->
+<path d="M0,180 L50,160 L120,170 L200,120 L280,140 L360,90 L440,110 L520,60 L600,80 L680,40 L800,50" fill="none" stroke="#00FFC2" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Pulse Points -->
+<circle cx="680" cy="40" fill="#00FFC2" r="4"></circle>
+<circle cx="680" cy="40" fill="#00FFC2" fill-opacity="0.2" r="8">
+<animate attributename="r" dur="2s" repeatcount="indefinite" values="6;12;6"></animate>
+</circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="absolute -bottom-6 w-full flex justify-between text-[10px] text-on-surface-variant font-space uppercase tracking-widest">
+<span>Jan</span>
+<span>Feb</span>
+<span>Mar</span>
+<span>Apr</span>
+<span>May</span>
+<span>Jun</span>
+<span>Jul</span>
+<span>Aug</span>
+<span>Sep</span>
+</div>
+</div>
+</div>
+<!-- Sector Breakdown (Side Detail) -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col">
+<h3 class="text-xl font-bold font-space tracking-tight mb-6">Emissions by Sector</h3>
+<div class="space-y-6 flex-1">
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-medium">Manufacturing</span>
+<span class="text-on-surface-variant">45%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full">
+<div class="h-full bg-primary w-[45%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-medium">Supply Chain</span>
+<span class="text-on-surface-variant">30%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full">
+<div class="h-full bg-tertiary w-[30%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-medium">Corporate Operations</span>
+<span class="text-on-surface-variant">15%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full">
+<div class="h-full bg-secondary-fixed w-[15%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-on-surface font-medium">Logistics</span>
+<span class="text-on-surface-variant">10%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-variant rounded-full">
+<div class="h-full bg-error-dim w-[10%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<div class="p-4 bg-surface-bright rounded-xl flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<p class="text-[11px] leading-relaxed text-on-surface-variant">
+<strong class="text-primary">AI Recommendation:</strong> Shift heavy manufacturing to off-peak grid hours to reduce Carbon Intensity by <span class="text-primary">~12%</span>.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Table of Obligations Section -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<div class="px-8 py-6 flex items-center justify-between border-b border-outline-variant/10">
+<h3 class="text-xl font-bold font-space tracking-tight">Table of Obligations</h3>
+<div class="flex gap-2">
+<div class="bg-surface p-1 rounded-lg flex">
+<button class="px-3 py-1 bg-surface-variant rounded text-[10px] font-bold uppercase tracking-widest text-primary">Global</button>
+<button class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Regional</button>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-lowest/30">
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant">Type</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant text-right">Target</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant text-right">Achieved</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant text-right">Gap</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant text-center">Status</th>
+<th class="px-8 py-4 text-[10px] font-bold uppercase tracking-[0.1em] text-on-surface-variant"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">energy_savings_leaf</span>
+</div>
+<div>
+<div class="text-sm font-medium">Scope 1: Direct Emissions</div>
+<div class="text-[10px] text-on-surface-variant">Facility fossil fuel combustion</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm font-space text-right">5,000 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right">4,200 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right text-primary">-800 kg</td>
+<td class="px-8 py-5 text-center">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full uppercase tracking-widest border border-primary/20">On Track</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm">bolt</span>
+</div>
+<div>
+<div class="text-sm font-medium">Scope 2: Purchased Electricity</div>
+<div class="text-[10px] text-on-surface-variant">Grid consumption compliance</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm font-space text-right">8,000 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right text-error">9,100 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right text-error">+1,100 kg</td>
+<td class="px-8 py-5 text-center">
+<span class="px-3 py-1 bg-error/10 text-error text-[10px] font-bold rounded-full uppercase tracking-widest border border-error/20">Critical</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm">local_shipping</span>
+</div>
+<div>
+<div class="text-sm font-medium">Scope 3: Logistics &amp; Travel</div>
+<div class="text-[10px] text-on-surface-variant">Employee business travel metrics</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm font-space text-right">2,000 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right">1,850 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right text-primary">-150 kg</td>
+<td class="px-8 py-5 text-center">
+<span class="px-3 py-1 bg-secondary-container/20 text-secondary text-[10px] font-bold rounded-full uppercase tracking-widest border border-secondary/20">Compliant</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">package_2</span>
+</div>
+<div>
+<div class="text-sm font-medium">Supply Chain: Upstream</div>
+<div class="text-[10px] text-on-surface-variant">Vendor environmental impact rating</div>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-sm font-space text-right">4,500 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right">4,480 kg</td>
+<td class="px-8 py-5 text-sm font-space text-right text-primary">-20 kg</td>
+<td class="px-8 py-5 text-center">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-widest border border-outline-variant/20">Pending Audit</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="text-on-surface-variant hover:text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface-container-highest/20 border-t border-outline-variant/10 text-center">
+<button class="text-[10px] font-space font-bold uppercase tracking-[0.2em] text-on-surface-variant hover:text-primary transition-colors">
+                    View Complete Obligation Register
+                </button>
+</div>
+</div>
+</main>
+<script src="app_logic.js"></script></body></html>

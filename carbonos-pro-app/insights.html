@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarbonOS | AI Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#003233",
+                    "on-primary-container": "#005c44",
+                    "on-tertiary-fixed-variant": "#004e5f",
+                    "tertiary": "#74e0ff",
+                    "on-primary-fixed": "#004734",
+                    "surface-variant": "#002b2c",
+                    "primary-dim": "#00edb4",
+                    "surface-tint": "#aaffdc",
+                    "inverse-on-surface": "#395b5c",
+                    "secondary-fixed-dim": "#3aedce",
+                    "error-container": "#9f0519",
+                    "on-surface": "#d3f8f8",
+                    "on-tertiary-fixed": "#002f39",
+                    "secondary-container": "#006b5b",
+                    "primary-container": "#00fdc1",
+                    "outline-variant": "#2c4d4e",
+                    "secondary": "#4ffcdc",
+                    "surface-container-low": "#001717",
+                    "surface": "#001112",
+                    "primary-fixed-dim": "#00edb4",
+                    "tertiary-container": "#00d5fe",
+                    "secondary-dim": "#3aedce",
+                    "surface-dim": "#001112",
+                    "on-tertiary": "#004e5f",
+                    "background": "#001112",
+                    "on-background": "#d3f8f8",
+                    "outline": "#5a7b7c",
+                    "surface-container-lowest": "#000000",
+                    "inverse-surface": "#e3ffff",
+                    "on-secondary-container": "#ddfff4",
+                    "on-error-container": "#ffa8a3",
+                    "tertiary-fixed": "#00d5fe",
+                    "tertiary-fixed-dim": "#00c7ec",
+                    "inverse-primary": "#006c51",
+                    "on-secondary-fixed": "#00483d",
+                    "on-error": "#490006",
+                    "on-primary-fixed-variant": "#00664c",
+                    "surface-container": "#001e1e",
+                    "primary-fixed": "#00fdc1",
+                    "on-secondary": "#005d4f",
+                    "surface-container-high": "#002425",
+                    "secondary-fixed": "#4ffcdc",
+                    "on-surface-variant": "#8eb2b2",
+                    "error": "#ff716c",
+                    "surface-container-highest": "#002b2c",
+                    "error-dim": "#d7383b",
+                    "tertiary-dim": "#00c7ec",
+                    "on-tertiary-container": "#004553",
+                    "on-secondary-fixed-variant": "#006858",
+                    "on-primary": "#00654b",
+                    "primary": "#aaffdc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .magnetic-hover:hover {
+            transform: scale(1.02);
+        }
+        .glass-card {
+            background: rgba(0, 43, 44, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .glow-mint {
+            box-shadow: 0 0 20px -5px rgba(0, 255, 194, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col py-8 bg-[#001717] dark:bg-[#001717] shadow-[0_20px_40px_-12px_rgba(0,255,194,0.08)] z-50">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold text-[#00FFC2] tracking-tighter font-headline">CarbonOS</h1>
+<p class="text-[10px] text-[#8eb2b2] uppercase tracking-[0.2em] font-headline">Enterprise Compliance</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out font-headline tracking-tight group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-[#00FFC2]" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Upload -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out font-headline tracking-tight group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-[#00FFC2]" data-icon="cloud_upload">cloud_upload</span>
+<span>Upload</span>
+</a>
+<!-- Marketplace -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out font-headline tracking-tight group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-[#00FFC2]" data-icon="storefront">storefront</span>
+<span>Marketplace</span>
+</a>
+<!-- AI Insights (Active) -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#00FFC2] border-l-2 border-[#00FFC2] bg-gradient-to-r from-[#00FFC2]/10 to-transparent font-headline tracking-tight" href="#">
+<span class="material-symbols-outlined" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span>AI Insights</span>
+</a>
+<!-- Reports -->
+<a class="flex items-center gap-4 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out font-headline tracking-tight group" href="#">
+<span class="material-symbols-outlined transition-colors group-hover:text-[#00FFC2]" data-icon="assessment">assessment</span>
+<span>Reports</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-gradient-to-br from-[#aaffdc] to-[#00fdc1] text-on-primary rounded-xl font-headline font-bold text-sm tracking-tight shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)] magnetic-hover transition-all">
+                New Audit
+            </button>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 flex items-center justify-between px-8 bg-[#001112]/80 backdrop-blur-xl no-border bg-gradient-to-b from-[#001717] to-transparent">
+<div class="flex items-center bg-surface-container-high px-4 py-1.5 rounded-full w-96">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-headline tracking-widest text-on-surface placeholder:text-outline w-full" placeholder="SEARCH INSIGHTS..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 mr-4 border-r border-outline-variant/30 pr-6">
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-headline tracking-widest text-[#8eb2b2] text-right leading-none">
+<span class="block font-bold text-on-surface mb-0.5">TERRA CORP</span>
+<span class="block opacity-60">Company Profile</span>
+</span>
+<img alt="User Avatar" class="w-10 h-10 rounded-full border border-primary-container/20" data-alt="Professional corporate executive portrait with high contrast studio lighting and dark background" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-12 min-h-screen bg-[#0A2F30]">
+<!-- Hero Section -->
+<section class="relative rounded-full p-12 mb-10 overflow-hidden bg-surface-container-lowest shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)]">
+<div class="absolute top-0 right-0 w-1/2 h-full">
+<img alt="Background pattern" class="w-full h-full object-cover opacity-40 mix-blend-screen" data-alt="Abstract digital network of glowing cyan energy particles flowing through deep space atmosphere" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+<div class="absolute inset-0 bg-gradient-to-l from-transparent via-[#0A2F30] to-[#0A2F30]"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full mb-6">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="text-[10px] font-headline tracking-[0.2em] text-primary uppercase">Quantum Analysis Active</span>
+</div>
+<h2 class="text-6xl font-bold font-headline text-on-surface leading-[0.95] tracking-tighter mb-8">
+                    AI-Powered Compliance Optimization
+                </h2>
+<button class="px-8 py-4 bg-primary text-on-primary font-headline font-bold rounded-xl flex items-center gap-3 glow-mint magnetic-hover transition-all">
+<span class="material-symbols-outlined" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    Generate New Insights
+                </button>
+</div>
+</section>
+<!-- Insights Bento Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Main AI Response Card -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Emissions Analysis Section -->
+<div class="glass-card rounded-full p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-primary/20 text-8xl" data-icon="monitoring">monitoring</span>
+</div>
+<div class="relative z-10">
+<h3 class="text-xs font-headline uppercase tracking-[0.2em] text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+                            01. Emissions Analysis
+                        </h3>
+<div class="flex flex-col md:flex-row gap-10">
+<div class="flex-1">
+<p class="text-xl font-light text-on-surface/90 leading-relaxed font-body mb-6">
+                                    Current trajectory indicates a <span class="text-primary font-bold">14.2% reduction</span> in Scope 2 emissions following the smart-grid integration. However, fugitive emissions in Sector 7 remain anomalous.
+                                </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<p class="text-[10px] text-on-surface-variant font-headline uppercase tracking-widest mb-1">Carbon Intensity</p>
+<p class="text-2xl font-headline font-bold text-on-surface">0.84 <span class="text-xs text-on-surface-variant">tCO2e</span></p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/10">
+<p class="text-[10px] text-on-surface-variant font-headline uppercase tracking-widest mb-1">Efficiency Gain</p>
+<p class="text-2xl font-headline font-bold text-secondary">+22.4%</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-64 h-48 bg-surface-container-lowest rounded-xl flex items-end justify-between p-4 gap-1 border border-outline-variant/5">
+<div class="w-full bg-primary/20 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-primary/40 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary/60 rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary/80 rounded-t-sm h-[75%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[90%] glow-mint"></div>
+<div class="w-full bg-secondary/80 rounded-t-sm h-[65%]"></div>
+<div class="w-full bg-secondary rounded-t-sm h-[55%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Compliance Gap Analysis Section -->
+<div class="glass-card rounded-full p-8 relative overflow-hidden group">
+<h3 class="text-xs font-headline uppercase tracking-[0.2em] text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="w-1 h-4 bg-tertiary rounded-full"></span>
+                        02. Compliance Gap Analysis
+                    </h3>
+<div class="space-y-4">
+<div class="bg-surface-container-high p-6 rounded-xl border-l-4 border-error flex items-center justify-between">
+<div>
+<h4 class="font-headline font-bold text-on-surface">Directive 2024/G-11 High Risk</h4>
+<p class="text-sm text-on-surface-variant mt-1">Non-compliant data verification in supply chain Tier 3.</p>
+</div>
+<div class="text-right">
+<span class="text-error font-headline font-bold text-xs uppercase tracking-widest">Urgent Action</span>
+<div class="mt-2 h-1.5 w-32 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-error w-[85%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-6 rounded-xl border-l-4 border-primary flex items-center justify-between">
+<div>
+<h4 class="font-headline font-bold text-on-surface">SEC Climate Disclosure</h4>
+<p class="text-sm text-on-surface-variant mt-1">Alignment confirmed for Q3 reporting cycle.</p>
+</div>
+<div class="text-right">
+<span class="text-primary font-headline font-bold text-xs uppercase tracking-widest">Compliant</span>
+<div class="mt-2 h-1.5 w-32 bg-surface-container-lowest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Actionable Recommendations List -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest rounded-full p-8 h-full border border-outline-variant/10">
+<h3 class="text-xs font-headline uppercase tracking-[0.2em] text-on-surface-variant mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="list_alt">list_alt</span>
+                        Actionable Recommendations
+                    </h3>
+<ul class="space-y-6">
+<li class="group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-headline font-bold group-hover:bg-primary group-hover:text-on-primary transition-all">1</div>
+<div>
+<p class="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Automate Tier-3 Audits</p>
+<p class="text-xs text-on-surface-variant leading-relaxed mt-1">Deploy smart contract verification to bridge the 2024/G-11 gap automatically.</p>
+</div>
+</div>
+</li>
+<li class="group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-headline font-bold group-hover:bg-primary group-hover:text-on-primary transition-all">2</div>
+<div>
+<p class="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Optimize Energy Peak-Hours</p>
+<p class="text-xs text-on-surface-variant leading-relaxed mt-1">Shift intensive manufacturing cycles by 4 hours to leverage renewable grid surplus.</p>
+</div>
+</div>
+</li>
+<li class="group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-headline font-bold group-hover:bg-primary group-hover:text-on-primary transition-all">3</div>
+<div>
+<p class="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Tax Credit Redemption</p>
+<p class="text-xs text-on-surface-variant leading-relaxed mt-1">Process pending Section 45Q credits for carbon sequestration projects.</p>
+</div>
+</div>
+</li>
+<li class="group cursor-pointer">
+<div class="flex items-start gap-4">
+<div class="mt-1 w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-headline font-bold group-hover:bg-primary group-hover:text-on-primary transition-all">4</div>
+<div>
+<p class="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">Retrofit HVAC Systems</p>
+<p class="text-xs text-on-surface-variant leading-relaxed mt-1">Estimated ROI: 14 months with a 30% reduction in facility footprint.</p>
+</div>
+</div>
+</li>
+</ul>
+<div class="mt-12 pt-10 border-t border-outline-variant/10">
+<p class="text-[10px] font-headline uppercase tracking-[0.2em] text-on-surface-variant mb-4">Estimated Impact</p>
+<div class="flex items-end gap-2">
+<span class="text-5xl font-headline font-bold text-[#00FFC2] tracking-tighter">-$420K</span>
+<span class="text-xs text-on-surface-variant pb-2">/ annually</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script src="app_logic.js"></script></body></html>

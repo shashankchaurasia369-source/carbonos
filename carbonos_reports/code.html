@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#003233",
+                    "on-primary-container": "#005c44",
+                    "on-tertiary-fixed-variant": "#004e5f",
+                    "tertiary": "#74e0ff",
+                    "on-primary-fixed": "#004734",
+                    "surface-variant": "#002b2c",
+                    "primary-dim": "#00edb4",
+                    "surface-tint": "#aaffdc",
+                    "inverse-on-surface": "#395b5c",
+                    "secondary-fixed-dim": "#3aedce",
+                    "error-container": "#9f0519",
+                    "on-surface": "#d3f8f8",
+                    "on-tertiary-fixed": "#002f39",
+                    "secondary-container": "#006b5b",
+                    "primary-container": "#00fdc1",
+                    "outline-variant": "#2c4d4e",
+                    "secondary": "#4ffcdc",
+                    "surface-container-low": "#001717",
+                    "surface": "#001112",
+                    "primary-fixed-dim": "#00edb4",
+                    "tertiary-container": "#00d5fe",
+                    "secondary-dim": "#3aedce",
+                    "surface-dim": "#001112",
+                    "on-tertiary": "#004e5f",
+                    "background": "#001112",
+                    "outline": "#5a7b7c",
+                    "surface-container-lowest": "#000000",
+                    "inverse-surface": "#e3ffff",
+                    "on-secondary-container": "#ddfff4",
+                    "on-error-container": "#ffa8a3",
+                    "tertiary-fixed": "#00d5fe",
+                    "tertiary-fixed-dim": "#00c7ec",
+                    "inverse-primary": "#006c51",
+                    "on-background": "#d3f8f8",
+                    "on-secondary-fixed": "#00483d",
+                    "on-error": "#490006",
+                    "on-primary-fixed-variant": "#00664c",
+                    "surface-container": "#001e1e",
+                    "primary-fixed": "#00fdc1",
+                    "on-secondary": "#005d4f",
+                    "surface-container-high": "#002425",
+                    "secondary-fixed": "#4ffcdc",
+                    "on-surface-variant": "#8eb2b2",
+                    "error": "#ff716c",
+                    "surface-container-highest": "#002b2c",
+                    "error-dim": "#d7383b",
+                    "tertiary-dim": "#00c7ec",
+                    "on-tertiary-container": "#004553",
+                    "on-secondary-fixed-variant": "#006858",
+                    "on-primary": "#00654b",
+                    "primary": "#aaffdc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #001112; color: #d3f8f8; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(0, 43, 44, 0.8); backdrop-filter: blur(12px); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #001112; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #003233; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-8 bg-[#001717] dark:bg-[#001717] shadow-[0_20px_40px_-12px_rgba(0,255,194,0.08)] z-50 overflow-hidden">
+<div class="px-6 mb-10 flex items-center gap-3">
+<div class="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" data-icon="token">token</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold text-[#00FFC2] tracking-tighter font-['Space_Grotesk']">CarbonOS</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant/60 font-headline">Enterprise Compliance</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1 px-4">
+<a class="group flex items-center px-4 py-3 text-sm font-['Space_Grotesk'] tracking-tight text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="group flex items-center px-4 py-3 text-sm font-['Space_Grotesk'] tracking-tight text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors" data-icon="cloud_upload">cloud_upload</span>
+                Upload
+            </a>
+<a class="group flex items-center px-4 py-3 text-sm font-['Space_Grotesk'] tracking-tight text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors" data-icon="storefront">storefront</span>
+                Marketplace
+            </a>
+<a class="group flex items-center px-4 py-3 text-sm font-['Space_Grotesk'] tracking-tight text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3 group-hover:text-primary transition-colors" data-icon="psychology">psychology</span>
+                AI Insights
+            </a>
+<!-- ACTIVE NAV: Reports -->
+<a class="group flex items-center px-4 py-3 text-sm font-['Space_Grotesk'] tracking-tight text-[#00FFC2] border-l-2 border-[#00FFC2] bg-gradient-to-r from-[#00FFC2]/10 to-transparent transition-all duration-150 ease-out" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="assessment" style="font-variation-settings: 'FILL' 1;">assessment</span>
+                Reports
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold rounded-xl shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)] hover:scale-[1.02] transition-transform duration-200">
+                New Audit
+            </button>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 flex items-center justify-between px-8 bg-[#001112]/80 backdrop-blur-xl bg-gradient-to-b from-[#001717] to-transparent">
+<div class="flex items-center gap-4 bg-surface-container-high/50 px-4 py-2 rounded-full border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs tracking-widest font-headline text-on-surface placeholder:text-on-surface-variant/40 w-64" placeholder="SEARCH REPORTS..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 border-r border-outline-variant/20 pr-6">
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="font-headline text-[10px] tracking-widest text-[#8eb2b2]">COMPANY PROFILE</p>
+<p class="text-xs font-bold text-[#d3f8f8]">Veridian Global HQ</p>
+</div>
+<div class="w-8 h-8 rounded-full border border-primary/30 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="Professional user avatar in dark business attire, corporate executive headshot, moody professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSMVmcLcszNqOuptQS6_ltyFj55fIc6YGOeGuR4AMv-dRRKI7xVwPJoYIxWYRoXpMEUE-1ueKfZZhpuhPFt94O41lfXJAlp4FZi7wV6D2Fy_fluDetc0fx8kX0rxU0snAPIDQXOG8n20XeEcu1kYcXPykNsEfys6j1_m-FjH0IMBG-9IYNHY8Wb0wyrxCn54UvopYyofcVSa86IMVUBq7EUs0rxswiLkd-c_9grXLhWduwmU4VUL9hxdyyAshvXocqZLkq7DhOzsC3"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-10 min-h-screen">
+<!-- Header & Title -->
+<div class="mb-10">
+<div class="flex items-baseline gap-3 mb-2">
+<h2 class="text-4xl font-extrabold font-headline tracking-tighter text-on-surface">Reports &amp; Exports</h2>
+<div class="h-1 w-12 bg-primary rounded-full"></div>
+</div>
+<p class="text-on-surface-variant max-w-2xl font-body">Manage, track, and download enterprise-wide compliance documentation and AI-generated carbon footprints.</p>
+</div>
+<!-- Summary Section (Key Stats) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="article">article</span>
+</div>
+<p class="text-[10px] tracking-[0.2em] font-headline text-on-surface-variant mb-1 uppercase">Total Reports</p>
+<h3 class="text-3xl font-headline font-bold text-primary">1,284</h3>
+<div class="mt-4 flex items-center gap-2 text-xs text-secondary-dim">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>+12% from last month</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="verified_user">verified_user</span>
+</div>
+<p class="text-[10px] tracking-[0.2em] font-headline text-on-surface-variant mb-1 uppercase">Compliance Rate</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">99.4%</h3>
+<div class="mt-4 flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+<span>Last audited 2h ago</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="bolt">bolt</span>
+</div>
+<p class="text-[10px] tracking-[0.2em] font-headline text-on-surface-variant mb-1 uppercase">Avg Generation</p>
+<h3 class="text-3xl font-headline font-bold text-on-surface">1.4s</h3>
+<div class="mt-4 flex items-center gap-2 text-xs text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="offline_bolt">offline_bolt</span>
+<span>Edge accelerated</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden group border border-primary/5">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" data-icon="cloud_download">cloud_download</span>
+</div>
+<p class="text-[10px] tracking-[0.2em] font-headline text-on-surface-variant mb-1 uppercase">Data Exported</p>
+<h3 class="text-3xl font-headline font-bold text-secondary">4.2 TB</h3>
+<div class="mt-4 flex items-center gap-2 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="storage">storage</span>
+<span>Across 12 nodes</span>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Table of Generated Reports -->
+<section class="col-span-12 lg:col-span-9 bg-surface-container-low rounded-xl overflow-hidden">
+<div class="px-8 py-6 flex items-center justify-between bg-surface-container-high/50">
+<h4 class="font-headline font-bold text-lg text-on-surface">Recent Reports</h4>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-variant hover:bg-surface-bright transition-colors text-xs font-headline tracking-wider text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            FILTER
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-8 py-4 text-[10px] font-headline tracking-widest text-on-surface-variant/60 uppercase">Report Name</th>
+<th class="px-6 py-4 text-[10px] font-headline tracking-widest text-on-surface-variant/60 uppercase">Type</th>
+<th class="px-6 py-4 text-[10px] font-headline tracking-widest text-on-surface-variant/60 uppercase">Generated</th>
+<th class="px-6 py-4 text-[10px] font-headline tracking-widest text-on-surface-variant/60 uppercase text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Q4 Carbon Neutrality Audit</p>
+<p class="text-[10px] text-on-surface-variant">VER-2024-0012</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold font-headline bg-on-tertiary-fixed-variant/20 text-tertiary">COMPLIANCE</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded transition-all" title="Download PDF">
+<span class="material-symbols-outlined text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded transition-all" title="Download CSV">
+<span class="material-symbols-outlined text-xl" data-icon="csv">csv</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Supply Chain Emissions Log</p>
+<p class="text-[10px] text-on-surface-variant">LOG-X-992</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold font-headline bg-on-secondary-fixed-variant/20 text-secondary">ANALYTICS</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 22, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded transition-all" title="Download PDF">
+<span class="material-symbols-outlined text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded transition-all" title="Download CSV">
+<span class="material-symbols-outlined text-xl" data-icon="csv">csv</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">AI Efficiency Projection 2025</p>
+<p class="text-[10px] text-on-surface-variant">AI-F-400</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold font-headline bg-on-tertiary-fixed-variant/20 text-tertiary">FORECAST</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 19, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded transition-all" title="Download PDF">
+<span class="material-symbols-outlined text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded transition-all" title="Download CSV">
+<span class="material-symbols-outlined text-xl" data-icon="csv">csv</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-container-high/30 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-on-surface-variant/10 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<div>
+<p class="font-bold text-on-surface text-sm">Monthly Security Protocol Export</p>
+<p class="text-[10px] text-on-surface-variant">SEC-MONTHLY-OCT</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold font-headline bg-surface-bright text-on-surface-variant">SYSTEM</span>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant">Oct 15, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded transition-all" title="Download PDF">
+<span class="material-symbols-outlined text-xl" data-icon="picture_as_pdf">picture_as_pdf</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary hover:bg-secondary/10 rounded transition-all" title="Download CSV">
+<span class="material-symbols-outlined text-xl" data-icon="csv">csv</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 bg-surface-container-low border-t border-outline-variant/10 flex items-center justify-between">
+<p class="text-[10px] font-headline text-on-surface-variant tracking-wider">SHOWING 4 OF 1,284 REPORTS</p>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-variant text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary/20 text-primary font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant text-on-surface-variant transition-colors text-xs">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-variant text-on-surface-variant transition-colors text-xs">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface-variant text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Export Actions Panel -->
+<section class="col-span-12 lg:col-span-3 space-y-6">
+<div class="bg-surface-container-highest p-6 rounded-xl border border-outline-variant/10">
+<h4 class="font-headline font-bold text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="file_download">file_download</span>
+                        Export Options
+                    </h4>
+<p class="text-xs text-on-surface-variant mb-6 font-body leading-relaxed">Instantly export your current dashboard view into standardized formats for stakeholders.</p>
+<div class="space-y-3">
+<button class="w-full group flex items-center justify-between p-4 bg-surface-bright/50 hover:bg-primary/10 rounded-xl border border-outline-variant/10 transition-all text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="picture_as_pdf">picture_as_pdf</span>
+<div>
+<p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Download PDF</p>
+<p class="text-[10px] text-on-surface-variant">High-fidelity Visual Report</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="download">download</span>
+</button>
+<button class="w-full group flex items-center justify-between p-4 bg-surface-bright/50 hover:bg-secondary/10 rounded-xl border border-outline-variant/10 transition-all text-left">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="table_chart">table_chart</span>
+<div>
+<p class="text-sm font-bold text-on-surface group-hover:text-secondary transition-colors">Download CSV</p>
+<p class="text-[10px] text-on-surface-variant">Raw Data for Spreadsheets</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Scheduling -->
+<div class="bg-surface-container p-6 rounded-xl relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="schedule">schedule</span>
+</div>
+<h4 class="font-headline font-bold text-on-surface mb-2">Automated Exports</h4>
+<p class="text-xs text-on-surface-variant mb-4 font-body leading-relaxed">Weekly compliance rollups are scheduled for delivery every Monday at 08:00 UTC.</p>
+<button class="text-[10px] tracking-widest font-headline font-bold text-primary hover:underline uppercase">Manage Schedule</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Toast Placeholder (Subtle Status) -->
+<div class="fixed bottom-6 right-6 z-50">
+<div class="glass-panel p-4 rounded-xl border border-primary/20 flex items-center gap-4 shadow-2xl">
+<div class="relative">
+<span class="material-symbols-outlined text-primary" data-icon="sync">sync</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface">Data Syncing...</p>
+<p class="text-[10px] text-on-surface-variant font-headline tracking-tighter">OCTOBER AUDIT IN PROGRESS</p>
+</div>
+</div>
+</div>
+</body></html>

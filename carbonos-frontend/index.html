@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonOS Dashboard</title>
+    <!-- Modern Output Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Application Sidebar -->
+        <nav class="sidebar glass-panel">
+            <h1 class="logo">Carbon<span class="highlight">OS</span></h1>
+            <ul class="nav-links">
+                <li class="active" data-target="dashboard-view">Dashboard</li>
+                <li data-target="upload-view">Data Upload</li>
+                <li data-target="marketplace-view">Marketplace</li>
+                <li data-target="insights-view">AI Insights</li>
+            </ul>
+        </nav>
+
+        <!-- Main Dashboard Viewport -->
+        <main class="main-content">
+            <!-- Global header -->
+            <header class="header glass-panel">
+                <input type="text" id="company-id" value="mock-1234-5678" placeholder="Enter Company ID..." />
+                <button id="refresh-btn" class="btn">Refresh Sync</button>
+            </header>
+
+            <div id="views">
+                <!-- 1. Dashboard View -->
+                <section id="dashboard-view" class="view active">
+                    <h2>Live Overview</h2>
+                    <div class="kpi-grid">
+                        <div class="kpi-card glass-panel">
+                            <h3>Total Production</h3>
+                            <p id="kpi-production" class="value">0 <span class="unit">units</span></p>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <h3>Carbon Emissions</h3>
+                            <p id="kpi-emissions" class="value">0 <span class="unit">KWh</span></p>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <h3>EPR Obligation</h3>
+                            <p id="kpi-obligation" class="value">0 <span class="unit">tons</span></p>
+                        </div>
+                        <div class="kpi-card glass-panel">
+                            <h3>Fulfilled Credits</h3>
+                            <p id="kpi-fulfilled" class="value">0 <span class="unit">tons</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="status-card glass-panel mt-4">
+                        <h3>Realtime Compliance Setup</h3>
+                        <div class="status-indicator" id="status-indicator">
+                            <span id="status-text">Pending Data</span>
+                            <span id="deficit-text">Deficit: 0</span>
+                        </div>
+                        <p style="color:var(--text-muted);margin: 1rem 0;">Generate your final state compliance documentation locally below.</p>
+                        <button id="generate-report" class="btn btn-outline">Download Audit JSON</button>
+                    </div>
+                </section>
+
+                <!-- 2. Processing Upload View -->
+                <section id="upload-view" class="view">
+                    <h2>System Data Ingestion Hub</h2>
+                    <div class="upload-container glass-panel">
+                        <p style="color:var(--text-muted);margin-bottom:1rem">Upload CSV datasets tracking `production_tons` and `energy_kwh` arrays strictly.</p>
+                        <div style="background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 8px;">
+                            <input type="file" id="csv-file" accept=".csv" class="file-input">
+                        </div>
+                        <button id="upload-btn" class="btn primary-btn mt-4">Process & Calculate</button>
+                        <p id="upload-status" class="status-msg mt-2"></p>
+                    </div>
+                </section>
+
+                <!-- 3. Marketplace View -->
+                <section id="marketplace-view" class="view">
+                    <h2>DeFi Credit Marketplace</h2>
+                    <div class="credits-grid" id="credits-list">
+                        <!-- Iterative DOM mapping logic lives here -->
+                    </div>
+                </section>
+
+                <!-- 4. Insights Framework View -->
+                <section id="insights-view" class="view">
+                    <h2>AI Carbon Advisory</h2>
+                    <div class="insights-container glass-panel">
+                        <button id="fetch-insights-btn" class="btn primary-btn">Generate Strategic Suggestions</button>
+                        <div id="insight-content" class="mt-4"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

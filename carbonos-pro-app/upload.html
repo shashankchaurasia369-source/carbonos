@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#003233",
+                        "on-primary-container": "#005c44",
+                        "on-tertiary-fixed-variant": "#004e5f",
+                        "tertiary": "#74e0ff",
+                        "on-primary-fixed": "#004734",
+                        "surface-variant": "#002b2c",
+                        "primary-dim": "#00edb4",
+                        "surface-tint": "#aaffdc",
+                        "inverse-on-surface": "#395b5c",
+                        "secondary-fixed-dim": "#3aedce",
+                        "error-container": "#9f0519",
+                        "on-surface": "#d3f8f8",
+                        "on-tertiary-fixed": "#002f39",
+                        "secondary-container": "#006b5b",
+                        "primary-container": "#00fdc1",
+                        "outline-variant": "#2c4d4e",
+                        "secondary": "#4ffcdc",
+                        "surface-container-low": "#001717",
+                        "surface": "#001112",
+                        "primary-fixed-dim": "#00edb4",
+                        "tertiary-container": "#00d5fe",
+                        "secondary-dim": "#3aedce",
+                        "surface-dim": "#001112",
+                        "on-tertiary": "#004e5f",
+                        "background": "#001112",
+                        "outline": "#5a7b7c",
+                        "surface-container-lowest": "#000000",
+                        "inverse-surface": "#e3ffff",
+                        "on-secondary-container": "#ddfff4",
+                        "on-error-container": "#ffa8a3",
+                        "tertiary-fixed": "#00d5fe",
+                        "tertiary-fixed-dim": "#00c7ec",
+                        "inverse-primary": "#006c51",
+                        "on-background": "#d3f8f8",
+                        "on-secondary-fixed": "#00483d",
+                        "on-error": "#490006",
+                        "on-primary-fixed-variant": "#00664c",
+                        "surface-container": "#001e1e",
+                        "primary-fixed": "#00fdc1",
+                        "on-secondary": "#005d4f",
+                        "surface-container-high": "#002425",
+                        "secondary-fixed": "#4ffcdc",
+                        "on-surface-variant": "#8eb2b2",
+                        "error": "#ff716c",
+                        "surface-container-highest": "#002b2c",
+                        "error-dim": "#d7383b",
+                        "tertiary-dim": "#00c7ec",
+                        "on-tertiary-container": "#004553",
+                        "on-secondary-fixed-variant": "#006858",
+                        "on-primary": "#00654b",
+                        "primary": "#aaffdc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-gradient {
+            background: linear-gradient(135deg, #aaffdc 0%, #00fdc1 100%);
+        }
+        .obsidian-glow {
+            box-shadow: 0 20px 40px -12px rgba(0, 255, 194, 0.08);
+        }
+        .dropzone-glow {
+            box-shadow: inset 0 0 20px rgba(0, 255, 194, 0.05), 0 0 15px rgba(0, 255, 194, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-[#001112] text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#001717] flex flex-col py-8 z-50 font-['Space_Grotesk'] tracking-tight shadow-[0_20px_40px_-12px_rgba(0,255,194,0.08)]">
+<div class="px-6 mb-10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" data-icon="token">token</span>
+</div>
+<div>
+<h1 class="text-2xl font-bold text-[#00FFC2] tracking-tighter">CarbonOS</h1>
+<p class="text-[10px] uppercase tracking-[0.2em] text-[#8eb2b2]">Enterprise Compliance</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<!-- Active Tab: Upload -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#00FFC2] border-l-2 border-[#00FFC2] bg-gradient-to-r from-[#00FFC2]/10 to-transparent transition-all duration-150 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="cloud_upload" style="font-variation-settings: 'FILL' 1;">cloud_upload</span>
+<span class="font-medium">Upload</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-medium">Marketplace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-medium">AI Insights</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#8eb2b2] hover:text-[#d3f8f8] hover:bg-[#002b2c] transition-all duration-150 ease-out rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-medium">Reports</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full kinetic-gradient text-on-primary font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-[0_0_20px_-5px_rgba(0,255,194,0.4)] transition-transform hover:scale-[1.02] active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="add_task">add_task</span>
+                New Audit
+            </button>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 flex items-center justify-between px-8 bg-[#001112]/80 backdrop-blur-xl bg-gradient-to-b from-[#001717] to-transparent">
+<div class="flex items-center bg-surface-container-high px-4 py-1.5 rounded-full w-96 border border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface placeholder:text-on-surface-variant w-full font-body ml-2" placeholder="Search carbon assets..." type="text"/>
+</div>
+<div class="flex items-center gap-6 font-['Space_Grotesk'] text-sm uppercase tracking-widest">
+<div class="flex items-center gap-4">
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary-container rounded-full"></span>
+</button>
+<button class="text-[#8eb2b2] hover:text-[#00FFC2] transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-outline-variant/20"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<span class="text-[#8eb2b2] group-hover:text-[#00FFC2] transition-colors">Company Profile</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary-container/30">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="professional male portrait with high-tech background and soft studio lighting, sharp focus on eyes" src="https://ui-avatars.com/api/?name=Carbon+OS&background=00fdc1&color=001112"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-12 min-h-screen bg-[#0A2F30]">
+<div class="max-w-6xl mx-auto space-y-10">
+<!-- Header Section -->
+<section class="space-y-1">
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Ingest Data Assets</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl">Upload your supply chain logs or material manifests. Our compliance engine will verify carbon footprints in real-time.</p>
+</section>
+<!-- Upload Zone -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<section class="lg:col-span-2">
+<div class="relative group">
+<!-- Background Glow Decoration -->
+<div class="absolute -inset-1 bg-gradient-to-r from-primary-container/20 to-secondary/20 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative border-2 border-dashed border-[#00FFC2]/30 bg-surface-container-low/50 backdrop-blur-sm rounded-[1.5rem] p-12 text-center dropzone-glow hover:border-[#00FFC2] transition-all duration-300 flex flex-col items-center justify-center min-h-[320px]">
+<div class="w-20 h-20 rounded-full bg-surface-bright flex items-center justify-center mb-6 obsidian-glow group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-[#00FFC2] text-4xl" data-icon="upload_file" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+</div>
+<h3 class="text-2xl font-headline font-semibold text-on-surface mb-2">Drop your CSV files here</h3>
+<p class="text-on-surface-variant mb-8 max-w-md">Drag and drop files to initiate high-frequency parsing. Supports .csv, .xlsx, and .json formats up to 500MB.</p>
+<div class="flex items-center gap-4">
+<button class="px-8 py-3 bg-surface-container-highest text-[#00FFC2] font-semibold rounded-xl border border-outline-variant/30 hover:bg-surface-bright transition-colors">
+                                    Browse Files
+                                </button>
+<div class="flex items-center gap-2 text-on-surface-variant text-xs uppercase tracking-widest">
+<span class="w-8 h-[1px] bg-outline-variant/30"></span>
+<span>or</span>
+<span class="w-8 h-[1px] bg-outline-variant/30"></span>
+</div>
+<button class="px-8 py-3 bg-[#00FFC2]/10 text-[#00FFC2] font-semibold rounded-xl hover:bg-[#00FFC2]/20 transition-colors">
+                                    Connect API
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Status Sidebar -->
+<section class="space-y-6">
+<div class="bg-surface-container-high rounded-[1.5rem] p-6 obsidian-glow">
+<h4 class="text-sm font-headline font-bold text-on-surface-variant uppercase tracking-widest mb-4">Ingestion Queue</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 rounded-xl bg-surface-container-low">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-on-surface truncate">Q4_Materials_Final.csv</p>
+<p class="text-[10px] text-on-surface-variant">2.4 MB • Verified</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-xl bg-surface-container-low border-l-2 border-primary-container/40">
+<span class="material-symbols-outlined text-[#00FFC2] animate-pulse" data-icon="sync">sync</span>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-on-surface truncate">Logistics_Europe_Jan.csv</p>
+<p class="text-[10px] text-on-surface-variant">45% Processing...</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gradient-to-br from-surface-bright to-surface-container-low rounded-[1.5rem] p-6 border border-outline-variant/10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="verified_user">verified_user</span>
+<span class="text-xs font-bold uppercase tracking-widest text-tertiary">Security Protocol</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">All uploaded data is encrypted using AES-256 and scrubbed for PII before compliance analysis.</p>
+</div>
+</section>
+</div>
+<!-- Data Preview Section -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-2xl font-headline font-bold text-on-surface tracking-tight">Data Preview</h3>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+                        Showing first 5 rows of Log_Data_01.csv
+                    </div>
+</div>
+<!-- Preview Table -->
+<div class="bg-surface-container-low rounded-[1.5rem] overflow-hidden obsidian-glow border border-outline-variant/5">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-highest/50">
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Product Name</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-center">Weight (kg)</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Material Type</th>
+<th class="px-8 py-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest text-right">Origin Code</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/5">
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Precision Turbine Blade X-1</td>
+<td class="px-8 py-5 text-sm text-on-surface text-center font-mono">14.50</td>
+<td class="px-8 py-5 text-sm">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-wider">Titanium Alloy</span>
+</td>
+<td class="px-8 py-5 text-sm text-right font-mono text-on-surface-variant">EU-882-90</td>
+</tr>
+<tr class="bg-surface-container-low/50 hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Structural Strut 44cm</td>
+<td class="px-8 py-5 text-sm text-on-surface text-center font-mono">8.25</td>
+<td class="px-8 py-5 text-sm">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-wider">Reinforced Steel</span>
+</td>
+<td class="px-8 py-5 text-sm text-right font-mono text-on-surface-variant">NA-102-45</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Thermal Shield Layer B</td>
+<td class="px-8 py-5 text-sm text-on-surface text-center font-mono">2.10</td>
+<td class="px-8 py-5 text-sm">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-wider">Carbon Composite</span>
+</td>
+<td class="px-8 py-5 text-sm text-right font-mono text-on-surface-variant">AS-441-22</td>
+</tr>
+<tr class="bg-surface-container-low/50 hover:bg-surface-bright transition-colors group">
+<td class="px-8 py-5 text-sm font-medium text-on-surface">Hydraulic Seal Kit</td>
+<td class="px-8 py-5 text-sm text-on-surface text-center font-mono">0.45</td>
+<td class="px-8 py-5 text-sm">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-secondary text-[10px] font-bold uppercase tracking-wider">Synthetic Polymer</span>
+</td>
+<td class="px-8 py-5 text-sm text-right font-mono text-on-surface-variant">EU-901-02</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Global Action Footer -->
+<div class="flex items-center justify-between pt-8 border-t border-outline-variant/10">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface transition-colors font-headline font-bold text-sm uppercase tracking-widest">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+                        Clear Selection
+                    </button>
+<div class="flex items-center gap-6">
+<div class="text-right">
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Estimated Processing Time</p>
+<p class="text-sm font-headline font-bold text-[#00FFC2]">4.2 Seconds</p>
+</div>
+<button class="kinetic-gradient text-on-primary font-headline font-bold text-lg py-4 px-10 rounded-2xl flex items-center gap-3 shadow-[0_0_30px_-5px_rgba(0,255,194,0.4)] transition-all hover:scale-[1.03] active:scale-[0.97]">
+<span class="material-symbols-outlined" data-icon="rocket_launch" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+                            Submit to Compliance Engine
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Floating Toast Notification (Simulated) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-surface-container-highest/90 backdrop-blur-xl border border-[#00FFC2]/20 px-6 py-3 rounded-full shadow-2xl z-50">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+<span class="text-xs font-bold tracking-widest text-[#00FFC2] uppercase">Compliance Engine Standby</span>
+<div class="w-[1px] h-4 bg-outline-variant/30 mx-2"></div>
+<span class="text-xs text-on-surface-variant">Ready for material manifest ingestion</span>
+</div>
+<script src="app_logic.js"></script></body></html>
