@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('CARBONOS_COMPANY', '11111111-1111-1111-1111-111111111111');
                     window.location.href = 'dashboard.html';
                 });
-            } else if(t.includes('started') || t.includes('secure') || t.includes('sales') || t.includes('documentation') || t.includes('framework')) {
+            } else if(t.includes('started') || t.includes('secure') || t.includes('sales') || t.includes('documentation') || t.includes('framework') || t.includes('demo')) {
                 el.addEventListener('click', (e) => {
                     if (el.tagName === 'A' && el.getAttribute('href') !== '#' && !el.getAttribute('href').includes('index')) return;
                     e.preventDefault();
