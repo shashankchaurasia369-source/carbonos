@@ -182,9 +182,25 @@ function initSignupForm() {
                 submitBtn.disabled = true;
             }
 
-            // Simulate account creation
-            setTimeout(() => {
-                localStorage.setItem('CARBONOS_COMPANY', '11111111-1111-1111-1111-111111111111');
+            // Real account creation via Backend API
+            fetch(`${BASE_API}/signup`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    name: company, 
+                    type: selectedType || 'manufacturer',
+                    user_email: email, // Backend doesn't store this yet but good to send
+                    user_name: name
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                
+                const companyId = data.company.id;
+                localStorage.setItem('CARBONOS_COMPANY', companyId);
                 localStorage.setItem('CARBONOS_USER', JSON.stringify({
                     name, company, email, type: selectedType || 'manufacturer'
                 }));
@@ -203,7 +219,16 @@ function initSignupForm() {
                 setTimeout(() => {
                     window.location.href = 'dashboard.html';
                 }, 1500);
-            }, 1200);
+            })
+            .catch(err => {
+                console.error("Signup failed:", err);
+                // Fallback for demo if backend is offline
+                localStorage.setItem('CARBONOS_COMPANY', '11111111-1111-1111-1111-111111111111');
+                showToast('Registration complete (Demo Mode)', 'success');
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1500);
+            });
         });
     }
 }

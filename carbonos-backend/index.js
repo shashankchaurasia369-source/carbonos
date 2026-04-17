@@ -39,6 +39,37 @@ const calculateStatus = (obligation, fulfilled) => {
 };
 
 // ==========================================
+// API -1: POST /signup
+// ==========================================
+app.post('/signup', async (req, res) => {
+    try {
+        const { name, type } = req.body;
+        if (!name) return res.status(400).json({ error: 'Company name is required' });
+
+        const { data, error } = await supabase.from('companies').insert({ 
+            name: name,
+            type: type || 'manufacturer'
+        }).select().single();
+
+        if (error) throw error;
+
+        // Initialize empty rows for the new company to avoid null checks later
+        await supabase.from('emissions').insert({ company_id: data.id, emissions_value: 0 });
+        await supabase.from('obligations').insert({ 
+            company_id: data.id, 
+            total: 0, 
+            fulfilled: 0, 
+            deficit: 0, 
+            status: 'compliant' 
+        });
+
+        res.json({ message: 'Company registered successfully', company: data });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+// ==========================================
 // API 1: POST /upload
 // ==========================================
 app.post('/upload', upload.single('file'), async (req, res) => {
